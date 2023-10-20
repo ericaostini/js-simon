@@ -49,8 +49,6 @@ const numberTwo = document.getElementById("two");
 const numberThree = document.getElementById("three");
 const numberFour = document.getElementById("four");
 const numberFive = document.getElementById("five");
-const allNumbers = document.querySelectorAll("input");
-console.log(allNumbers);
 let check = false;
 
 btn.addEventListener("click", function(){
@@ -91,10 +89,19 @@ btn.addEventListener("click", function(){
         }
 
     } else{
-        points.innerHTML = "Inserisci numero";
+        points.innerHTML = "Ti sei dimenticato di inserire un NUMERO (non una parola)";
     }
+    resetValue();
     //console.log(arrayUser);
 },{once:true});
+
+function resetValue(){
+    numberOne.value = " ";
+    numberTwo.value = " ";
+    numberThree.value = " ";
+    numberFour.value = " ";
+    numberFive.value = " ";
+}
 // arrayUser.push(numberOne);
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
