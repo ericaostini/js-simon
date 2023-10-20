@@ -17,6 +17,7 @@ function countSec(){
 
 const numGenerate = 5;
 const arrayRandom = [];
+const arrayUser = [];
 const min = 1;
 const max = 100;
 const numberBox = document.getElementById("box");
@@ -38,6 +39,14 @@ for (let n = 0; n < arrayRandomLen; n++){
 textNum += '</ul>'
 numberBox.innerHTML = textNum;
 
+const numberOne = document.getElementById("one").value;
+const numberTwo = document.getElementById("two");
+const numberThree = document.getElementById("three");
+const numberFour = document.getElementById("four");
+const numberFive = document.getElementById("five");
+
+arrayUser.push(numberOne);
+console.log(arrayUser);
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
