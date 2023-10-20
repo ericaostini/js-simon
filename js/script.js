@@ -41,6 +41,7 @@ textNum += '</ul>'
 numberBox.innerHTML = textNum;
 
 const btn = document.querySelector("button");
+const points = document.getElementById("points");
 const numberOne = document.getElementById("one");
 const numberTwo = document.getElementById("two");
 const numberThree = document.getElementById("three");
@@ -59,7 +60,30 @@ btn.addEventListener("click", function(){
             arrayNumW.push(arrayUser[i]);
         }
     }
-    console.log(arrayNumW);
+    console.log(arrayNumW)
+    console.log(arrayNumW.length);
+    const punteggio = arrayNumW.length;
+    switch (punteggio){
+        case 0:
+            points.innerHTML = `Che memoria, complimenti`;
+            break
+        case 1:
+            points.innerHTML = `Solo 1, puoi fare di meglio`;
+            break
+        case 2:
+            points.innerHTML = `${punteggio} ci sei quasi dai`;
+            break
+        case 3:
+            points.innerHTML = `${punteggio} ci sei quasi dai`;
+            break
+        case 4:
+            points.innerHTML = `${punteggio} ci sei quasi dai`;
+            break
+        case 5:
+            points.innerHTML = `Tu si che sei intelligente`;
+            break
+    }
+
 },{once:true})
 // arrayUser.push(numberOne);
 function getRndInteger(min, max) {
