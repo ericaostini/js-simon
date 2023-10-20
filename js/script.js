@@ -12,9 +12,16 @@ while (arrayRandom.length < numGenerate){
     if (!arrayRandom.includes(randomNum)){
         arrayRandom.push(randomNum);
     }
-    
 }
-numberBox.innerHTML = arrayRandom;
+
+const arrayRandomLen = arrayRandom.length;
+let textNum = '<ul class = "d-flex text-center" >'
+//console.log(arrayRandomLen);
+for (let n = 0; n < arrayRandomLen; n++){
+    textNum += '<li class = "p-3" >' + arrayRandom[n] + '</li>';
+}
+textNum += '</ul>'
+numberBox.innerHTML = textNum;
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
