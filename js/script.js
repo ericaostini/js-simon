@@ -12,6 +12,7 @@ function countSec(){
         timer.innerHTML = "FINE";
         console.log("fine");
         numberBox.classList.add("d-none");
+        playgame.classList.remove("d-none");
     }
 }
 
@@ -22,6 +23,7 @@ const arrayNumW = [];
 const min = 1;
 const max = 100;
 const numberBox = document.getElementById("box");
+const playgame = document.getElementById("playgame");
 
 while (arrayRandom.length < numGenerate){
     let randomNum = getRndInteger(min, max)
