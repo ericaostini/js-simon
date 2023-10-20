@@ -1,7 +1,7 @@
 "use strict";
 
 const timer = document.getElementById("timer");
-let seconds = 30;
+let seconds = 3;
 const timerSec = setInterval(countSec, 1000);
 function countSec(){
     if(seconds > 0 ){
@@ -49,14 +49,17 @@ const numberTwo = document.getElementById("two");
 const numberThree = document.getElementById("three");
 const numberFour = document.getElementById("four");
 const numberFive = document.getElementById("five");
+const allNumbers = document.querySelectorAll("input");
+console.log(allNumbers);
 
 btn.addEventListener("click", function(){
     arrayUser.push(parseInt(numberOne.value),parseInt(numberTwo.value), parseInt(numberThree.value),parseInt(numberFour.value),parseInt(numberFive.value));
+    for (let n = 0; n < arrayUser.length; n++){
+        if(isNaN(arrayUser[n])){
+            console.log("aggiungi numero");
+        }
+    }
     console.log(arrayUser);
-        // if(!isNaN(numberOne, numberTwo, numberThree, numberFour, numberFive)){
-        //     console.log("aggiungi numero");
-        // } else{
-        // }
     for (let i = 0; i < arrayRandom.length; i++){
         if (arrayRandom.includes(arrayUser[i])){
             arrayNumW.push(arrayUser[i]);
@@ -85,8 +88,7 @@ btn.addEventListener("click", function(){
             points.innerHTML = `Tu si che sei intelligente`;
             break
     }
-
-},{once:true})
+},{once:true});
 // arrayUser.push(numberOne);
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
