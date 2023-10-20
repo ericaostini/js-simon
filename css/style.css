@@ -4,3 +4,11 @@
     padding: 0;
     list-style: none;
 }
+
+#timer{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin: 40px auto;
+    border-radius: 50%;
+}

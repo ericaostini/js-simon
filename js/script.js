@@ -15,14 +15,25 @@ while (arrayRandom.length < numGenerate){
 }
 
 const arrayRandomLen = arrayRandom.length;
-let textNum = '<ul class = "d-flex text-center" >'
+let textNum = '<ul class = "d-flex">'
 //console.log(arrayRandomLen);
 for (let n = 0; n < arrayRandomLen; n++){
-    textNum += '<li class = "p-3" >' + arrayRandom[n] + '</li>';
+    textNum += '<li class = "m-auto" >' + arrayRandom[n] + '</li>';
 }
 textNum += '</ul>'
 numberBox.innerHTML = textNum;
 
+let seconds = 30;
+const timerSec = setInterval(countSec, 1000);
+function countSec(){
+    if(seconds > 0 ){
+        seconds -= 1;
+        console.log(seconds);
+    } else{
+        console.log("fine")
+    }
+}
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
+
