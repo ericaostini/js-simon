@@ -18,6 +18,7 @@ function countSec(){
 const numGenerate = 5;
 const arrayRandom = [];
 const arrayUser = [];
+const arrayNumW = [];
 const min = 1;
 const max = 100;
 const numberBox = document.getElementById("box");
@@ -39,14 +40,28 @@ for (let n = 0; n < arrayRandomLen; n++){
 textNum += '</ul>'
 numberBox.innerHTML = textNum;
 
-const numberOne = document.getElementById("one").value;
+const btn = document.querySelector("button");
+const numberOne = document.getElementById("one");
 const numberTwo = document.getElementById("two");
 const numberThree = document.getElementById("three");
 const numberFour = document.getElementById("four");
 const numberFive = document.getElementById("five");
 
-arrayUser.push(numberOne);
-console.log(arrayUser);
+btn.addEventListener("click", function(){
+    arrayUser.push(parseInt(numberOne.value),parseInt(numberTwo.value), parseInt(numberThree.value),parseInt(numberFour.value),parseInt(numberFive.value));
+    console.log(arrayUser);
+        // if(!isNaN(numberOne, numberTwo, numberThree, numberFour, numberFive)){
+        //     console.log("aggiungi numero");
+        // } else{
+        // }
+    for (let i = 0; i < arrayRandom.length; i++){
+        if (arrayRandom.includes(arrayUser[i])){
+            arrayNumW.push(arrayUser[i]);
+        }
+    }
+    console.log(arrayNumW);
+},{once:true})
+// arrayUser.push(numberOne);
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
