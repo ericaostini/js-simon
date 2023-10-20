@@ -1,5 +1,20 @@
 "use strict";
 
+const timer = document.getElementById("timer");
+let seconds = 30;
+const timerSec = setInterval(countSec, 1000);
+function countSec(){
+    if(seconds > 0 ){
+        seconds -= 1;
+        //console.log(seconds);
+        timer.innerHTML = `<div> ${seconds} </div>`;
+    } else{
+        timer.innerHTML = "FINE";
+        console.log("fine");
+        numberBox.classList.add("d-none");
+    }
+}
+
 const numGenerate = 5;
 const arrayRandom = [];
 const min = 1;
@@ -23,16 +38,6 @@ for (let n = 0; n < arrayRandomLen; n++){
 textNum += '</ul>'
 numberBox.innerHTML = textNum;
 
-let seconds = 30;
-const timerSec = setInterval(countSec, 1000);
-function countSec(){
-    if(seconds > 0 ){
-        seconds -= 1;
-        console.log(seconds);
-    } else{
-        console.log("fine")
-    }
-}
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
