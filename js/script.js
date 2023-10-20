@@ -51,43 +51,49 @@ const numberFour = document.getElementById("four");
 const numberFive = document.getElementById("five");
 const allNumbers = document.querySelectorAll("input");
 console.log(allNumbers);
+let check = false;
 
 btn.addEventListener("click", function(){
     arrayUser.push(parseInt(numberOne.value),parseInt(numberTwo.value), parseInt(numberThree.value),parseInt(numberFour.value),parseInt(numberFive.value));
     for (let n = 0; n < arrayUser.length; n++){
         if(isNaN(arrayUser[n])){
-            console.log("aggiungi numero");
+            check = true;
         }
     }
-    console.log(arrayUser);
-    for (let i = 0; i < arrayRandom.length; i++){
-        if (arrayRandom.includes(arrayUser[i])){
-            arrayNumW.push(arrayUser[i]);
+    if (!check){
+        for (let i = 0; i < arrayRandom.length; i++){
+            if (arrayRandom.includes(arrayUser[i])){
+                arrayNumW.push(arrayUser[i]);
+            }
         }
+        console.log(arrayNumW)
+        console.log(arrayNumW.length);
+        const punteggio = arrayNumW.length;
+        switch (punteggio){
+            case 0:
+                points.innerHTML = `Che memoria, complimenti`;
+                break
+            case 1:
+                points.innerHTML = `Solo 1, puoi fare di meglio`;
+                break
+            case 2:
+                points.innerHTML = `${punteggio} ci sei quasi dai`;
+                break
+            case 3:
+                points.innerHTML = `${punteggio} ci sei quasi dai`;
+                break
+            case 4:
+                points.innerHTML = `${punteggio} ci sei quasi dai`;
+                break
+            case 5:
+                points.innerHTML = `Tu si che sei intelligente`;
+                break
+        }
+
+    } else{
+        points.innerHTML = "Inserisci numero";
     }
-    console.log(arrayNumW)
-    console.log(arrayNumW.length);
-    const punteggio = arrayNumW.length;
-    switch (punteggio){
-        case 0:
-            points.innerHTML = `Che memoria, complimenti`;
-            break
-        case 1:
-            points.innerHTML = `Solo 1, puoi fare di meglio`;
-            break
-        case 2:
-            points.innerHTML = `${punteggio} ci sei quasi dai`;
-            break
-        case 3:
-            points.innerHTML = `${punteggio} ci sei quasi dai`;
-            break
-        case 4:
-            points.innerHTML = `${punteggio} ci sei quasi dai`;
-            break
-        case 5:
-            points.innerHTML = `Tu si che sei intelligente`;
-            break
-    }
+    //console.log(arrayUser);
 },{once:true});
 // arrayUser.push(numberOne);
 function getRndInteger(min, max) {
