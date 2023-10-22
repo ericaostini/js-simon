@@ -1,7 +1,7 @@
 "use strict";
 
 const timer = document.getElementById("timer");
-let seconds = 3;
+let seconds = 10;
 const timerSec = setInterval(countSec, 1000);
 function countSec(){
     if(seconds > 0 ){
@@ -37,7 +37,7 @@ const arrayRandomLen = arrayRandom.length;
 let textNum = '<ul class = "d-flex">'
 //console.log(arrayRandomLen);
 for (let n = 0; n < arrayRandomLen; n++){
-    textNum += '<li class = "m-auto" >' + arrayRandom[n] + '</li>';
+    textNum += '<li class = "m-auto border p-3 bg-light text-black" >' + arrayRandom[n] + '</li>';
 }
 textNum += '</ul>'
 numberBox.innerHTML = textNum;
@@ -89,7 +89,7 @@ btn.addEventListener("click", function(){
         }
 
     } else{
-        points.innerHTML = "Ti sei dimenticato di inserire un NUMERO (non una parola)";
+        points.innerHTML = "Ti sei dimenticato di inserire un NUMERO (magari non scrivere parole)";
     }
     resetValue();
     //console.log(arrayUser);
