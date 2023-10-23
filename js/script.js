@@ -9,6 +9,7 @@ function countSec(){
         //console.log(seconds);
         timer.innerHTML = `<div> ${seconds} </div>`;
     } else{
+        clearInterval(timerSec);
         timer.innerHTML = "FINE";
         console.log("fine");
         numberBox.classList.add("d-none");
@@ -23,6 +24,7 @@ const arrayNumW = [];
 const min = 1;
 const max = 100;
 const numberBox = document.getElementById("box");
+numberBox.innerHTML = " ";
 const playgame = document.getElementById("playgame");
 
 while (arrayRandom.length < numGenerate){
